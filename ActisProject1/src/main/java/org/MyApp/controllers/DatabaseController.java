@@ -15,11 +15,13 @@ public class DatabaseController {
         }
         System.out.println("Opened database successfully");
     }
-
+    //insert data to database
     public static void insertToDB(String address, String login, String password, String[] commands, String template ) {
 
         try {
+            //connect to database
             Connection db = DriverManager.getConnection(address, login, password);
+
             db.setAutoCommit(false);
             Statement stmt = db.createStatement();
 
@@ -33,6 +35,29 @@ public class DatabaseController {
             db.commit();
             db.close();
             
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println(e.getClass().getName()+": "+e.getMessage());
+            System.exit(0);
+        }
+    }
+    //select from database
+    public static void selectEverything(String address, String login, String password, String tableName) {
+        try {
+            //connect to database
+            Connection db = DriverManager.getConnection(address, login, password);
+            db.setAutoCommit(false);
+
+            Statement stmt = db.createStatement();
+            Object rs = stmt.executeQuery("SELECT * FROM " + tableName);
+
+
+
+
+            stmt.close();
+            db.commit();
+            db.close();
+
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());

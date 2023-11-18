@@ -15,6 +15,8 @@ public class Application {
 
         String sql = "INSERT INTO prisoners (LastName, FirstName, Birthday, Gender, Crime, SentanceStart, SentanceEnd) VALUES (";
 
-        DatabaseController.insertToDB("jdbc:postgresql://localhost:5432/TrialDB", "postgres", "000", commands, sql);
+        //DatabaseController.insertToDB("jdbc:postgresql://localhost:5432/TrialDB", "postgres", "000", commands, sql);
+
+        DatabaseController.selectEverything("jdbc:postgresql://localhost:5432/TrialDB", "postgres", "000", "prisoners");
     }
 }
