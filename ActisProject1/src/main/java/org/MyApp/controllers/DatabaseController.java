@@ -19,8 +19,7 @@ public class DatabaseController {
         System.out.println("Opened database successfully");
     }
     //insert data to database
-    public static void insertToDB(String address, String login, String password, String[] commands, String template ) {
-
+    public static void insertToDB(String address, String login, String password, String[] commands) {
         try {
             //connect to database
             Connection db = DriverManager.getConnection(address, login, password);
@@ -29,7 +28,7 @@ public class DatabaseController {
             Statement stmt = db.createStatement();
 
             for (String i: commands) {
-                i = template + i + " );";
+                i = "INSERT INTO prisoners (LastName, FirstName, Birthday, Gender, Crime, SentanceStart, SentanceEnd) VALUES (" + i + " );";
                 stmt.executeUpdate(i);
             }
 
@@ -45,7 +44,7 @@ public class DatabaseController {
         }
     }
     //select from database
-    public static ArrayList<DbStructure> selectEverything(String address, String login, String password, String tableName) {
+    public static ArrayList<DbStructure> selectEverything(String address, String login, String password) {
 
         ArrayList<DbStructure> DbData = null;
 
@@ -55,7 +54,7 @@ public class DatabaseController {
             db.setAutoCommit(false);
 
             Statement stmt = db.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM " + tableName);
+            ResultSet rs = stmt.executeQuery("SELECT * FROM prioners");
 
             DbData = new ArrayList<DbStructure>();
 
@@ -70,6 +69,7 @@ public class DatabaseController {
                 Date sentanceEnd = rs.getDate("SentanceEnd");
 
                 DbStructure x = new DbStructure(Id, lastName, firstName, birthday, gender, crime, sentanceStart, sentanceEnd);
+                System.out.println(x.toString());
 
                 DbData.add(x);
             }
@@ -85,8 +85,8 @@ public class DatabaseController {
         }
         return DbData;
     }
-
-    public static DbStructure selectById(String address, String login, String password, String tableName, String ID) {
+    //delete data from database by Id
+    public static DbStructure selectById(String address, String login, String password, String ID) {
 
         DbStructure x = null;
         try {
@@ -95,7 +95,7 @@ public class DatabaseController {
             db.setAutoCommit(false);
 
             Statement stmt = db.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM " + tableName + " WHERE id = " + ID);
+            ResultSet rs = stmt.executeQuery("SELECT * FROM prisoners WHERE id = " + ID);
             
             while (rs.next()) {
                 int Id = rs.getInt("ID");
@@ -108,6 +108,7 @@ public class DatabaseController {
                 Date sentanceEnd = rs.getDate("SentanceEnd");
 
                 x = new DbStructure(Id, lastName, firstName, birthday, gender, crime, sentanceStart, sentanceEnd);
+                System.out.println(x.toString());
             }
 
             stmt.close();
@@ -120,5 +121,65 @@ public class DatabaseController {
             System.exit(0);
         }
         return x;
+    }
+    //delete data from database by Id
+    public static void deleteById(String address, String login, String password, String ID) {
+        try {
+            Connection db = DriverManager.getConnection(address, login, password);
+            db.setAutoCommit(false);
+
+            Statement stmt = db.createStatement();
+            stmt.executeUpdate("DELETE FROM prisoners WHERE id = " + ID);
+
+            db.commit();
+            stmt.close();
+            db.close();
+
+            System.out.println("DELETEd successfully");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println(e.getClass().getName()+": "+e.getMessage());
+            System.exit(0);
+        }
+    }
+    //update database data by Id
+    public static void updateById(String address, String login, String password, String ID, String updateColumn, String updateValue) {
+        DbStructure x =null;
+        try {
+            Connection db = DriverManager.getConnection(address, login, password);
+            db.setAutoCommit(false);
+
+            Statement stmt = db.createStatement();
+            stmt.executeUpdate("UPDATE prisoners SET " + updateColumn + " = '" + updateValue + "' WHERE ID = " + ID);
+
+            //SELECT updated row
+            ResultSet rs = stmt.executeQuery("SELECT * FROM prisoners WHERE id = " + ID);
+
+            while (rs.next()) {
+                int Id = rs.getInt("ID");
+                String lastName = rs.getString("LastName");
+                String firstName = rs.getString("FirstName");
+                Date birthday = rs.getDate("Birthday");
+                String gender = rs.getString("Gender");
+                String crime = rs.getString("Crime");
+                Date sentanceStart = rs.getDate("SentanceStart");
+                Date sentanceEnd = rs.getDate("SentanceEnd");
+
+                x = new DbStructure(Id, lastName, firstName, birthday, gender, crime, sentanceStart, sentanceEnd);
+                System.out.println(x.toString());
+            }
+
+            db.commit();
+            stmt.close();
+            db.close();
+
+            System.out.println("UPDATEd successfully");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println(e.getClass().getName()+": "+e.getMessage());
+            System.exit(0);
+        }
     }
 }

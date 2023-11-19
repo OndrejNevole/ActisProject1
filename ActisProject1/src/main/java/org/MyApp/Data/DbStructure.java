@@ -88,6 +88,6 @@ public class DbStructure {
     }
 
     public String toString() {
-        return Id + ", " + lastName + ", " + firstName + ", " + birthday.toString() + ", " + gender + ", " + crime + ", " + sentanceStart.toString() + ", " + sentanceEnd.toString();
+        return "'" + Id + "', '" + lastName + "', '" + firstName + "', '" + birthday.toString() + "', '" + gender + "', '" + crime + "', '" + sentanceStart.toString() + "', '" + sentanceEnd.toString() + "'";
     }
 }
