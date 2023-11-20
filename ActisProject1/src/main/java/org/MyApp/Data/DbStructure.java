@@ -1,7 +1,7 @@
 package org.MyApp.Data;
 
 import java.sql.Date;
-
+//Structure of database data
 public class DbStructure {
     public int Id;
     public String lastName;
