@@ -4,7 +4,7 @@
 
 To start the backend project navigate to: "ActisProject1\ActisProject1"\
 Then run the "./Gradlew bootRun" command\
-The application should run on: "http://localhost:8080"\
+The application should run on: "http://localhost:8080" \
 The application uses PostgreSQL databse\
 
 ## Endpoint overwiev:
