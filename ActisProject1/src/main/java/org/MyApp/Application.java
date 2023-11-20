@@ -1,5 +1,6 @@
 package org.MyApp;
 
+import org.MyApp.Data.Config;
 import org.MyApp.Data.DbStructure;
 import org.MyApp.controllers.DatabaseController;
 import org.springframework.boot.SpringApplication;

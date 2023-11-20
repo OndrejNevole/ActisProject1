@@ -1,5 +1,6 @@
 package org.MyApp.controllers;
 
+import org.MyApp.Data.Config;
 import org.MyApp.Data.DbStructure;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,16 +13,21 @@ public class ApiController {
         return "Hello ;)";
     }
 
-    @PostMapping("/TrialDb/SelectAll")
-    public ArrayList<DbStructure> getSelectAll(@RequestBody String address, String user, String password) { return DatabaseController.selectEverything(address, user, password);}
+    @GetMapping("/TrialDb/SelectAll")
+    public ArrayList<DbStructure> getSelectAll() {
+        Config Config = new Config();
+        return DatabaseController.selectEverything(Config.DbAddress, Config.Username, Config.Password);}
 
-    @PostMapping("/TrialDb/SelectById")
-    public DbStructure getSelectById(@RequestBody String address, String user, String password, String id) {return DatabaseController.selectById(address, user, password, id);}
+    @GetMapping("/TrialDb/SelectById")
+    public DbStructure getSelectById(@RequestParam String id) {
+        Config Config = new Config();
+        return DatabaseController.selectById(Config.DbAddress, Config.Username, Config.Password, id);}
 
     @PostMapping("/TrialDb/PostToDb")
-    public void postToDB(@RequestBody String address, String user, String password, String[] Data) {
+    public void postToDB(@RequestBody String[] Data) {
+        Config Config = new Config();
         try {
-            DatabaseController.insertToDB(address, user, password, Data);
+            DatabaseController.insertToDB(Config.DbAddress, Config.Username, Config.Password, Data);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -30,8 +36,12 @@ public class ApiController {
     }
 
     @DeleteMapping("/TrialDb/Delete")
-    public void deleteById(@RequestBody String address, String user, String password, String id) { DatabaseController.deleteById(address, user, password, id); }
+    public void deleteById(@RequestParam String id) {
+        Config Config = new Config();
+        DatabaseController.deleteById(Config.DbAddress, Config.Username, Config.Password, id); }
 
     @PutMapping("/TrialDb/Update")
-    public void updateById(@RequestBody String address, String user, String password, String id, String updateColumn, String updateValue) { DatabaseController.updateById(address, user, password, id, updateColumn, updateValue);}
+    public void updateById(@RequestBody String id, String updateColumn, String updateValue) {
+        Config Config = new Config();
+        DatabaseController.updateById(Config.DbAddress, Config.Username, Config.Password, id, updateColumn, updateValue);}
 }
