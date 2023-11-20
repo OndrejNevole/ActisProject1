@@ -54,7 +54,7 @@ public class DatabaseController {
             db.setAutoCommit(false);
 
             Statement stmt = db.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM prioners");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM prisoners");
 
             DbData = new ArrayList<DbStructure>();
 

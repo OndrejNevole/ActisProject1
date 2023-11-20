@@ -11,7 +11,9 @@ import java.util.List;
 @SpringBootApplication
 public class Application {
     public static void main(String[] args) {
-        //SpringApplication.run(Application.class, args);
+
+        //Start http server
+        SpringApplication.run(Application.class, args);
 
         //ArrayList<DbStructure> DbData = new ArrayList<DbStructure>();
 
@@ -27,7 +29,7 @@ public class Application {
 
         //DatabaseController.deleteById("jdbc:postgresql://localhost:5432/TrialDB", "postgres", "000", "5");
 
-        DatabaseController.updateById("jdbc:postgresql://localhost:5432/TrialDB", "postgres", "000", "9", "SentanceEnd", "2007-04-01");
+        //DatabaseController.updateById("jdbc:postgresql://localhost:5432/TrialDB", "postgres", "000", "9", "SentanceEnd", "2007-04-01");
 
         /*for (DbStructure i: DbData) {
             System.out.println(i.toString());

@@ -13,15 +13,15 @@ public class ApiController {
     }
 
     @GetMapping("/TrialDb/SelectAll")
-    public ArrayList<DbStructure> getSelectAll() { return DatabaseController.selectEverything("jdbc:postgresql://localhost:5432/TrialDB", "postgres", "000");}
+    public ArrayList<DbStructure> getSelectAll(@RequestBody String address, String user, String password) { return DatabaseController.selectEverything(address, user, password);}
 
     @GetMapping("/TrialDb/SelectById")
-    public DbStructure getSelectById(@RequestParam String id) {return DatabaseController.selectById("jdbc:postgresql://localhost:5432/TrialDB", "postgres", "000", id);}
+    public DbStructure getSelectById(@RequestBody String address, String user, String password, String id) {return DatabaseController.selectById(address, user, password, id);}
 
     @PostMapping("/TrialDb/PostToDb")
-    public void postToDB(@RequestBody String[] Data) {
+    public void postToDB(@RequestBody String address, String user, String password, String[] Data) {
         try {
-            DatabaseController.insertToDB("jdbc:postgresql://localhost:5432/TrialDB", "postgres", "000", Data);
+            DatabaseController.insertToDB(address, user, password, Data);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -30,8 +30,8 @@ public class ApiController {
     }
 
     @DeleteMapping("/TrialDb/Delete")
-    public void deleteById(@RequestParam String id) { DatabaseController.deleteById("jdbc:postgresql://localhost:5432/TrialDB", "postgres", "000", id); }
+    public void deleteById(@RequestBody String address, String user, String password, String id) { DatabaseController.deleteById(address, user, password, id); }
 
     @PutMapping("/TrialDb/Update")
-    public void updateById(@RequestBody String id, String updateColumn, String updateValue) { DatabaseController.updateById("jdbc:postgresql://localhost:5432/TrialDB", "postgres", "000", id, updateColumn, updateValue);}
+    public void updateById(@RequestBody String address, String user, String password, String id, String updateColumn, String updateValue) { DatabaseController.updateById(address, user, password, id, updateColumn, updateValue);}
 }
