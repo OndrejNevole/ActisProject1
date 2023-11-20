@@ -16,8 +16,9 @@ public class Application {
         //Start http server
         SpringApplication.run(Application.class, args);
 
-        //Tests
+        //Examples:
 
+        //List to store requested data
         //ArrayList<DbStructure> DbData = new ArrayList<DbStructure>();
 
         //Mock data for insert
