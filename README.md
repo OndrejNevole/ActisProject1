@@ -5,7 +5,7 @@ The application uses a PostgreSQL database and spring boot to create REST API
 
 ## Build steps
 
-To start the backend project navigate to: "ActisProject1\ActisProject1" \
+To start the backend application navigate to: "ActisProject1\ActisProject1" \
 Then run the "./Gradlew bootRun" command \
 The application should run on: "http://localhost:8080"
 
