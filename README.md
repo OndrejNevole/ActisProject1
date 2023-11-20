@@ -1,4 +1,4 @@
-# This is a Spring boot apllication with Angular frontend (TODO)
+# This is a Spring boot application with Angular frontend (unfinished)
 This is a test application \
 The application uses a PostgreSQL database and spring boot to create REST API 
 
