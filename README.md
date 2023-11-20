@@ -29,8 +29,8 @@ To communicate with database, the application needs user credentials:
 To configure these parameters head to: "ActisProject1\ActisProject1\src\main\java\org\MyApp\Data\Config.java" 
 
 ## Database table
-This application communicates with a table called "prisoners" \
-To create this table run this command:
+This application communicates with a database table called "prisoners" \
+To create this table, run this command:
 
 	CREATE TABLE prisoners  
 		ID INT IDENTITY(1,1) PRIMARY KEY, 
