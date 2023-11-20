@@ -5,7 +5,7 @@
 To start the backend project navigate to: "ActisProject1\ActisProject1" \
 Then run the "./Gradlew bootRun" command \
 The application should run on: "http://localhost:8080" \
-The application uses PostgreSQL databse \
+The application uses PostgreSQL databse 
 
 ## Endpoint overwiev:
 
@@ -18,11 +18,11 @@ The application uses PostgreSQL databse \
 </ul>
 
 ## ser credentials
-To communicate with database, the application needs user credentials: \
+To communicate with database, the application needs user credentials: 
 <ul>
   <li>address of the database</li>
   <li>username</li>
   <li>password</li>
 </ul>
-To configure these parameters head to: "ActisProject1\ActisProject1\src\main\java\org\MyApp\Data\Config.java" \
+To configure these parameters head to: "ActisProject1\ActisProject1\src\main\java\org\MyApp\Data\Config.java" 
   
