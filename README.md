@@ -1,13 +1,13 @@
 # This is a Spring boot apllication with Angular frontend (TODO)
 This is a test application \
-The application uses a PostgreSQL database and spring boot to create REST API \
+The application uses a PostgreSQL database and spring boot to create REST API 
 
 
 ## Build steps
 
 To start the backend project navigate to: "ActisProject1\ActisProject1" \
 Then run the "./Gradlew bootRun" command \
-The application should run on: "http://localhost:8080" 
+The application should run on: "http://localhost:8080"
 
 ## Endpoint overwiev:
 
@@ -30,7 +30,7 @@ To configure these parameters head to: "ActisProject1\ActisProject1\src\main\jav
 
 ## Database table
 This application communicates with a table called "prisoners" \
-To create this table run this command: \
+To create this table run this command:
 
 	CREATE TABLE prisoners  
 		ID INT IDENTITY(1,1) PRIMARY KEY, 
