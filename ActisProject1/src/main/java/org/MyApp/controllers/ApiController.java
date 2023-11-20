@@ -12,10 +12,10 @@ public class ApiController {
         return "Hello ;)";
     }
 
-    @GetMapping("/TrialDb/SelectAll")
+    @PostMapping("/TrialDb/SelectAll")
     public ArrayList<DbStructure> getSelectAll(@RequestBody String address, String user, String password) { return DatabaseController.selectEverything(address, user, password);}
 
-    @GetMapping("/TrialDb/SelectById")
+    @PostMapping("/TrialDb/SelectById")
     public DbStructure getSelectById(@RequestBody String address, String user, String password, String id) {return DatabaseController.selectById(address, user, password, id);}
 
     @PostMapping("/TrialDb/PostToDb")
