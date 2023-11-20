@@ -1,10 +1,10 @@
 # This is a Spring boot apllication with Angular frontend (TODO)
 
 ## Build steps
-To start the backend project navigate to: "ActisProject1\ActisProject1"
-Then run the "./Gradlew bootRun" command
-The application should run on: "http://localhost:8080"
-The application uses PostgreSQL databse
+To start the backend project navigate to: "ActisProject1\ActisProject1"\
+Then run the "./Gradlew bootRun" command\
+The application should run on: "http://localhost:8080"\
+The application uses PostgreSQL databse\
 
 ## Endpoint overwiev:
   Select all GET endpoint: "http://localhost:8080/TrialDb/SelectAll"
