@@ -13,10 +13,10 @@ To run the application, first build it using:
 
  	mvn package
 
-  This should create a .jar file ("ActisProject1/target/main-....jar) \
+  This should create a .jar file ("ActisProject1/target/main-0.0.1-SNAPSHOT.jar) \
   To run it use this command:
 
-  	java -jar main-....jar
+  	java -jar main-0.0.1-SNAPSHOT.jar
 
 Now the application should run on: "http://localhost:8080/Prisoners"
 
