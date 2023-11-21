@@ -13,7 +13,7 @@ To run the application, first build it using
 
  	mvn package
 
-  This shoul create a .jar file ("ActisProject1/target/main-....jar) \
+  This should create a .jar file ("ActisProject1/target/main-....jar) \
   To run this use the command:
 
   	java -jar main-....jar
