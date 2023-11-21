@@ -9,7 +9,8 @@ import java.util.Date;
 @Entity
 @Table
 public class prisoner {
-    @jakarta.persistence.Id
+    //Prisoner class defines data structure
+    @Id
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )

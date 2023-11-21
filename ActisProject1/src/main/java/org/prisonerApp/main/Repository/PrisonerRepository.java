@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PrisonerRepository extends JpaRepository<prisoner, Integer> {
-
+    //Interface for JpaRepository functions
 }

@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PrisonerAppApplication {
 
 	public static void main(String[] args) {
+		//Starts the application
 		SpringApplication.run(PrisonerAppApplication.class, args);
 	}
 

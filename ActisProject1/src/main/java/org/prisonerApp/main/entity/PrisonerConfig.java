@@ -10,6 +10,8 @@ import java.util.List;
 
 @Configuration
 public class PrisonerConfig {
+
+    //PrisonerConfig create some test data for the database
     @Bean
     CommandLineRunner commandLineRunner(PrisonerRepository repository) {
         return  arg -> {
@@ -40,7 +42,7 @@ public class PrisonerConfig {
                     LocalDate.of(2000, 3, 2),
                     LocalDate.of(2004, 11, 7)
             );
-
+            //Save the test data
             repository.saveAll(List.of(Biden, Trump, Obama));
         };
     }

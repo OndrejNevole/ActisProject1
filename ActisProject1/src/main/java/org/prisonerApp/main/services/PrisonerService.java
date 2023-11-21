@@ -12,6 +12,7 @@ import java.util.Optional;
 @Service
 public class PrisonerService {
 
+    //Reference of PrisonerRepository
     private final PrisonerRepository prisonerRepository;
 
     @Autowired
@@ -19,43 +20,55 @@ public class PrisonerService {
         this.prisonerRepository = repository;
     }
 
+    //SELECT all prisoners from database
     public List<prisoner> getPrisoners() {
         return prisonerRepository.findAll();
     }
 
+    //SELECT prisoner by id
     public Optional<prisoner> getPrisonerbyId(int id) {
+        //Check if prisoner exists
         boolean exists = prisonerRepository.existsById(id);
         if (!exists) {
             throw new IllegalStateException(
                     "Prisoner with Id: " + id + " does not exist"
             );
         }
+        //Return prisoner
         return prisonerRepository.findById(id);
     }
 
+    //INSERT prisoner to the database
     public void addNewPrisoner(prisoner prisoner) {
         prisonerRepository.save(prisoner);
     }
 
+    //DELETE prisoner from the database
     public void deletePrisoner(int id) {
+        //Check if prisoner exists
         boolean exists = prisonerRepository.existsById(id);
         if (!exists) {
             throw new IllegalStateException(
                     "Prisoner with Id: " + id + " does not exist"
             );
         }
+        //Delete prisoner
         prisonerRepository.deleteById(id);
     }
 
+    //UPDATE prisoner
     @Transactional
     public void updatePrisoner(int id, prisoner updatedPrisoner) {
+        //Check if prisoner exists
         boolean exists = prisonerRepository.existsById(id);
         if (!exists) {
             throw new IllegalStateException(
                     "Prisoner with Id: " + id + " does not exist"
             );
         }
+        //Find prisoner to update
         prisonerRepository.findById(id).map(prisoner -> {
+            //Update with provided values
             if (updatedPrisoner.getLastName() != null) {
                 prisoner.setLastName(updatedPrisoner.getLastName());
             }
@@ -77,6 +90,7 @@ public class PrisonerService {
             if (updatedPrisoner.getSentanceEnd() != null) {
                 prisoner.setSentanceEnd(updatedPrisoner.getSentanceEnd());
             }
+            //Save updated prisoner
            return prisonerRepository.save(prisoner);
         });
     }
