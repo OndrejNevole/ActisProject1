@@ -1,7 +1,7 @@
 # This is a Spring boot application with Angular frontend (unfinished)
 This is a test application \
-The application uses a PostgreSQL database and spring boot to create REST API 
-
+The application uses a PostgreSQL database and spring boot to create REST API \
+There are example requests in: "ActisProject1\ActisProject1\src\main\java\org\prisonerApp\main\example-requests.http"
 
 ## Build steps
 
@@ -37,4 +37,4 @@ To communicate with database, the application needs user credentials:
   <li>username</li>
   <li>password</li>
 </ul>
-To configure these parameters head to application.properties file ("ActisProject1\ActisProject1\src\main\resources\application.properties")
+To configure these parameters head to the application.properties file ("ActisProject1\ActisProject1\src\main\resources\application.properties")
