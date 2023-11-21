@@ -66,6 +66,7 @@ public class PrisonerService {
                     "Prisoner with Id: " + id + " does not exist"
             );
         }
+
         //Find prisoner to update
         prisonerRepository.findById(id).map(prisoner -> {
             //Update with provided values
