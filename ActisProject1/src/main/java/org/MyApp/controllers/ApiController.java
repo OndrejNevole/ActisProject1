@@ -32,7 +32,7 @@ public class ApiController {
         //Call database controller
         return DatabaseController.selectById(Config.DbAddress, Config.Username, Config.Password, id);}
 
-    //Insert data to databse
+    //Insert data to database
     //POST endpoint
     @PostMapping("/TrialDb/PostToDb")
     public void postToDB(@RequestBody String[] Data) {

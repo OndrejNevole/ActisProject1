@@ -6,12 +6,18 @@ import org.MyApp.controllers.DatabaseController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
+import java.io.IOException;
 
 @SpringBootApplication
 public class Application {
     public static void main(String[] args) {
+
+
 
         //Start http server
         SpringApplication.run(Application.class, args);
