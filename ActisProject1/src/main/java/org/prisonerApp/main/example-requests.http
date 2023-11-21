@@ -1,0 +1,51 @@
+###
+POST http://localhost:8080/Prisoners
+Content-Type: application/json
+
+{
+  "lastName":"Clinton",
+  "firstName":"Bill",
+  "birthday":"1946-08-19",
+  "gender":"Male",
+  "crime":"Driving under the influence",
+  "sentanceStart":"2023-11-20",
+  "sentanceEnd":"2025-11-20"
+}
+
+
+###
+DELETE http://localhost:8080/Prisoners/3
+
+###
+PUT http://localhost:8080/Prisoners/1
+Content-Type: application/json
+
+{
+  "lastName":"Clinton",
+  "firstName":"Bill",
+  "birthday":"1946-08-19",
+  "gender":"Male",
+  "crime":"Driving under the influence",
+  "sentanceStart":"2023-11-20",
+  "sentanceEnd":"2025-11-20"
+}
+
+###
+PUT http://localhost:8080/Prisoners/2
+Content-Type: application/json
+
+{
+"lastName":"Clinton",
+"firstName":"Bill",
+"birthday":"",
+"gender":"",
+"crime":"",
+"sentanceStart":"",
+"sentanceEnd":""
+}
+
+###
+GET http://localhost:8080/Prisoners/1
+
+###
+GET http://localhost:8080/Prisoners/All

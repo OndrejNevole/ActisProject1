@@ -23,7 +23,7 @@ public class PrisonerController {
 
     //GET endpoint for selecting all prisoners
     //GET http://localhost:8080/Prisoners/All
-    @GetMapping("All")
+    @GetMapping("/All")
     public List<prisoner> getPrisoner() {
         return prisonerService.getPrisoners();
     }
