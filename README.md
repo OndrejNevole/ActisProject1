@@ -37,4 +37,4 @@ To communicate with database, the application needs user credentials:
   <li>username</li>
   <li>password</li>
 </ul>
-To configure these parameters head to the application.properties file ("ActisProject1\ActisProject1\src\main\resources\application.properties")
+To configure these parameters head to the <b>application.properties</b> file ("ActisProject1\ActisProject1\src\main\resources\application.properties")
