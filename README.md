@@ -37,6 +37,10 @@ Get every prisoner:
 
  	curl http://localhost:8080/Prisoners/All
 
+Get single prisoner:
+
+	curl http://localhost:8080/Prisoners/{id of prisoner}  
+
 To add a prisoner try:
 
 	curl -X POST http://localhost:8080/Prisoners -H "Content-Type: application/json" -d '{"{Prisoner data}"}'
