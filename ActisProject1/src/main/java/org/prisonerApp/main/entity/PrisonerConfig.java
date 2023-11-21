@@ -11,7 +11,7 @@ import java.util.List;
 @Configuration
 public class PrisonerConfig {
 
-    //PrisonerConfig create some test data for the database
+    //Create some test data for the database
     @Bean
     CommandLineRunner commandLineRunner(PrisonerRepository repository) {
         return  arg -> {

@@ -3,10 +3,8 @@ package org.prisonerApp.main.controllers;
 import org.prisonerApp.main.entity.prisoner;
 import org.prisonerApp.main.services.PrisonerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,18 +28,18 @@ public class PrisonerController {
         return prisonerService.getPrisoners();
     }
 
-    //POST endpoint for adding prisoners
-    //POST http://localhost:8080/Prisoners
-    @PostMapping()
-    public void postPrisoner(@RequestBody prisoner prisoner) {
-        prisonerService.addNewPrisoner(prisoner);
-    }
-
     //GET endpoint for getting prisoner by Id
     //GET http://localhost:8080/Prisoners/{id here}
     @GetMapping(path = "{prisonerId}")
     public Optional<prisoner> getPrisonerById(@PathVariable("prisonerId") int prisonerId) {
         return prisonerService.getPrisonerbyId(prisonerId);
+    }
+
+    //POST endpoint for adding prisoners
+    //POST http://localhost:8080/Prisoners
+    @PostMapping()
+    public void postPrisoner(@RequestBody prisoner prisoner) {
+        prisonerService.addNewPrisoner(prisoner);
     }
 
     //DELETE endpoint
