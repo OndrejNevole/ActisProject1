@@ -32,8 +32,8 @@ To configure these parameters head to: "ActisProject1\ActisProject1\src\main\jav
 This application communicates with a database table called "prisoners" \
 To create this table, run this SQL command:
 
-	CREATE TABLE prisoners  
-		ID INT IDENTITY(1,1) PRIMARY KEY, 
+	CREATE TABLE prisoners ( 
+		ID INT GENERATED ALWAYS AS IDENTITY, 
 		LastName VARCHAR(255), 
 		FirstName VARCHAR(255), 
 		Birthday DATE, 
