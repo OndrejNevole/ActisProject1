@@ -41,19 +41,11 @@ Get single prisoner:
 
 	curl http://localhost:8080/Prisoners/{id of prisoner}  
 
-To add a prisoner try:
-
-	curl -X POST http://localhost:8080/Prisoners -H "Content-Type: application/json" -d '{"{Prisoner data}"}'
-
  To delete a prisoner:
 
  	curl -X DELETE http://localhost:8080/Prisoners/{id of prisoner}
 
-  To update a prisoner:
-
-  	curl -x PUT http://localhost:8080/Prisoners/{id of prisoner} -H "Content-Type: application/json" -d '{"{Prisoner data}"}'
-
-   There are example requests in: "ActisProject1\ActisProject1\src\main\java\org\prisonerApp\main\example-requests.http"
+   There are other example requests in: "ActisProject1\ActisProject1\src\main\java\org\prisonerApp\main\example-requests.http"
 
 ## User credentials
 To communicate with database, the application needs user credentials: 
