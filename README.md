@@ -5,11 +5,11 @@ There are example requests in: "ActisProject1\ActisProject1\src\main\java\org\pr
 
 ## Build steps
 
-To run the application, first build it using 
+To run the application, first build it using: 
 
 	mvn compile
 
- and
+ and:
 
  	mvn package
 
