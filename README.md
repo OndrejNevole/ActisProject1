@@ -51,7 +51,7 @@ Get single prisoner:
 
   To update a prisoner:
 
-  	curl -X PUT http://localhost:8080/Prisoners/3 -H "Content-Type: application/json" -d '{"lastName":"Bill","firstName":"Clinton"}'
+  	curl -X PUT http://localhost:8080/Prisoners/{if of prisoner} -H "Content-Type: application/json" -d '{"lastName":"Bill","firstName":"Clinton"}'
 
    There are also example requests in: "ActisProject1\ActisProject1\src\main\java\org\prisonerApp\main\example-requests.http"
 
