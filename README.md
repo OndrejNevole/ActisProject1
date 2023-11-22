@@ -33,15 +33,15 @@ Now the application should run on: "http://localhost:8080/Prisoners"
 
 ### cURL commands to test the API
 
-Get every prisoner:
+To get every prisoner:
 
  	curl http://localhost:8080/Prisoners/All
 
-Get single prisoner:
+To get single prisoner:
 
 	curl http://localhost:8080/Prisoners/{id of prisoner}  
 
- Upload a prisoner:
+ To upload a prisoner:
 
  	curl -X POST http://localhost:8080/Prisoners -H "Content-Type: application/json" -d '{"lastName":"Bush","firstName":"George","birthday":"1946-7-6","gender":"Male","crime":"breaking and entering","sentanceStart":"1990-10-1","sentanceEnd":"1991-1-1"}'
 
