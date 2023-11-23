@@ -43,7 +43,7 @@ To get single prisoner:
 
  To upload a prisoner:
 
- 	curl -X POST http://localhost:8080/Prisoners -H "Content-Type: application/json" -d '{"lastName":"Bush","firstName":"George","birthday":"1946-7-6","gender":"Male","crime":"breaking and entering","sentanceStart":"1990-10-1","sentanceEnd":"1991-1-1"}'
+ 	curl -X POST http://localhost:8080/Prisoners -H "Content-Type: application/json" -d '{"lastName":"Bush","firstName":"George","birthday":"1946-07-06","gender":"Male","crime":"breaking and entering","sentanceStart":"1990-10-01","sentanceEnd":"1991-01-01"}'
 
  To delete a prisoner:
 
